@@ -1,5 +1,6 @@
 title: High School Math Tutoring in Midtown Atlanta (and online)
-# GitHub Pages built-in supported theme; no custom theme code required.
-theme: jekyll-theme-minimal
+remote_theme: jeromelachaud/freelancer-theme
+plugins:
+  - jekyll-remote-theme
 
 markdown: kramdown

@@ -3,8 +3,6 @@ layout: default
 title: High School Math Tutoring in Midtown Atlanta (and online)
 ---
 
-# High School Math Tutoring in Midtown Atlanta (and online)
-
 ## About
 
 **Tutor:** [Name]  
@@ -38,8 +36,8 @@ title: High School Math Tutoring in Midtown Atlanta (and online)
 ## Contact
 
 - Email: [Email address]
-- Interest form: [Add form link or embed]
-- Google Calendar booking page: [Add booking link or embed]
+- Interest form: [Add form link]
+- Google Calendar booking page: [Add booking link]
 
 ## Safety
 
