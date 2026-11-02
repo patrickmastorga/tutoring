@@ -2,7 +2,7 @@
 
 A one-page Jekyll site using the [Freelancer theme](https://github.com/jeromelachaud/freelancer-theme) via `jekyll-remote-theme`.
 
-Edit `index.md` and replace the bracketed placeholders with your details. Add reviews only with permission.
+Replace the bracketed placeholders in `_layouts/default.html` with your details. Add reviews only with permission.
 
 ## Publish with GitHub Pages
 
