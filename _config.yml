@@ -1,0 +1,14 @@
+title: Math, Made Clear
+email: YOUR_EMAIL@example.com
+description: Friendly, one-to-one high school math tutoring in Midtown Atlanta and online.
+url: ""
+baseurl: ""
+
+markdown: kramdown
+permalink: pretty
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
