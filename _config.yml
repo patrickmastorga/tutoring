@@ -1,14 +1,5 @@
-title: Math, Made Clear
-email: YOUR_EMAIL@example.com
-description: Friendly, one-to-one high school math tutoring in Midtown Atlanta and online.
-url: ""
-baseurl: ""
+title: High School Math Tutoring in Midtown Atlanta (and online)
+# GitHub Pages built-in supported theme; no custom theme code required.
+theme: jekyll-theme-minimal
 
 markdown: kramdown
-permalink: pretty
-
-exclude:
-  - README.md
-  - Gemfile
-  - Gemfile.lock
-  - vendor

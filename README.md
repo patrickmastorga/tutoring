@@ -1,65 +1,36 @@
-# Math, Made Clear — tutoring site starter
+# Math tutoring site
 
-A one-page, static Jekyll site designed to grow into a personal high-school math tutoring website. The starter intentionally uses no Jekyll plugins beyond GitHub Pages' supported bundle and keeps its styling and tiny navigation script in separate asset files.
+A small, one-page Jekyll site using GitHub Pages' built-in `jekyll-theme-minimal` theme and Markdown. No custom layouts, stylesheet, JavaScript, or Actions workflow.
 
-## Before your first commit
+## Fill in the page
 
-1. Replace the obvious placeholders in `index.md`:
-   - `[Your name]`, `[Your rate]`, background-check details, policies, and email address.
-   - Replace the photo placeholder in the About section with your own image when ready. Put it under `assets/images/` and add an `<img>` in `index.md` with useful alt text.
-   - Replace `[YOUR_GOOGLE_CALENDAR_BOOKING_LINK]` with your booking page URL. If you choose to embed the booking page, replace the calendar placeholder with Google's embed code.
-   - Change the page title and description in `index.md` and `_config.yml` if you want different branding.
-2. Leave reviews as placeholders until you have permission to publish the wording and attribution.
-3. Decide how to receive interest-form submissions before adding a form. A static Jekyll page does not process or store form entries; connect a form service or use a `mailto:` link.
-4. If using GitHub Pages under a project repository URL (for example `username.github.io/tutoring`), set `baseurl: "/tutoring"` in `_config.yml`. For a user site (`username.github.io`) or a custom domain at the root, keep `baseurl: ""`.
+Edit `index.md` and replace the bracketed placeholders with your own details. Keep the review section empty or use its note until you have permission to publish reviews. For a Google Calendar schedule, you can start with its booking link; an embed can be added later if you want one.
 
-## Initialize Git and make the first commit
+## Initialize Git and push to GitHub
 
-This folder is deliberately not initialized as a Git repository. When ready, run:
+This folder has not been initialized as a Git repository. When ready:
 
 ```sh
 git init
 git add .
-git commit -m "Create tutoring site starter"
+git commit -m "Create tutoring site"
 git branch -M main
 ```
 
-Create an empty GitHub repository, connect it as `origin`, then push `main`:
+Create an empty GitHub repository, then connect it and push:
 
 ```sh
 git remote add origin https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git
 git push -u origin main
 ```
 
-## Deploy with GitHub Pages
+## Publish with GitHub Pages
 
-This starter uses GitHub Pages' built-in Jekyll publishing from a branch; it does not need a custom GitHub Actions workflow. After you push your first commit to `main`:
+After pushing `main`:
 
-1. Open the repository on GitHub and go to **Settings → Pages**.
-2. Under **Build and deployment**, set **Source** to **Deploy from a branch**.
-3. Select branch **`main`** and folder **`/(root)`**, then click **Save**.
-4. GitHub Pages will build and publish the Jekyll site from the repository root. Check **Settings → Pages** for the published URL and the build status.
+1. Open the repository on GitHub and choose **Settings → Pages**.
+2. Under **Build and deployment**, choose **Deploy from a branch**.
+3. Select **`main`** and **`/(root)`**, then click **Save**.
+4. GitHub Pages will build and publish the site. Check the Pages settings for the URL and status.
 
-Later pushes to `main` will automatically trigger publishing. If the page doesn't appear right away, allow a few minutes and check the Pages build/deployment status in repository settings. You do not need to set up an Actions workflow or install Ruby locally just to publish this site.
-
-## Preview locally (optional)
-
-Ruby and Bundler are required. This project uses the GitHub Pages-compatible Jekyll environment through the `github-pages` gem. GitHub Pages' published dependency list currently uses Jekyll 3.10.0, Liquid 4.0.4, and Ruby 3.3.4. GitHub's local-testing guide cautions that the `github-pages` bundle can have compatibility errors on Ruby 3.2 and later, and recommends Ruby 3.1.x or earlier if you hit them. Ruby 4.0 is not a good target for this bundle. Use a separate Ruby 3.1 installation for local preview; don't alter macOS system Ruby:
-
-```sh
-bundle install
-bundle exec jekyll serve
-```
-
-Then open the local URL printed by Jekyll, usually `http://127.0.0.1:4000`.
-
-## Where things live
-
-- `index.md` — one-page content and section placeholders.
-- `_layouts/default.html` — shared document shell, metadata, header/navigation.
-- `_includes/footer-scripts.html` — reserved spot for small optional integrations.
-- `Gemfile` — GitHub Pages-compatible dependencies if you later want to preview locally.
-- `assets/css/style.css` — responsive visual design and styles.
-- `assets/js/main.js` — accessible mobile navigation enhancement.
-- `_config.yml` — Jekyll configuration and site metadata.
-- `Gemfile` — GitHub Pages-compatible Jekyll dependencies for optional local preview.
+Subsequent pushes to `main` will publish updates automatically. No Actions workflow or local Ruby installation is required for this branch-publishing setup.
