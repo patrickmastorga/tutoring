@@ -2,7 +2,7 @@
 
 A single-page static site built with [Astro](https://astro.build), styled with
 [Pico CSS](https://picocss.com) (a premade classless theme — no CSS of our own).
-Publishes to GitHub Pages on every push to `main`.
+Publishes to GitHub Pages on every push to `main`. 
 
 ## Run it locally
 
