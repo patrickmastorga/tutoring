@@ -10,9 +10,11 @@ permissions:
   pages: write
   id-token: write
 
+# Never cancel a deploy mid-publish: HTML and its hashed /_astro assets must
+# upload together, or the page 404s on its own stylesheet.
 concurrency:
   group: pages
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   build:
