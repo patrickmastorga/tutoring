@@ -1,0 +1,109 @@
+---
+import { getCollection } from "astro:content";
+import "@picocss/pico/css/pico.classless.min.css";
+import * as s from "../content/site";
+
+// Reviews with no body yet are still placeholders, so don't render them.
+const reviews = (await getCollection("reviews")).filter((r) => r.body?.trim());
+const [first, ...rest] = reviews;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{s.name} · High School Math Tutoring in Midtown Atlanta</title>
+    <meta
+      name="description"
+      content="High school math tutoring in Midtown Atlanta and online. Algebra, Geometry, Precalculus, AP Calculus and Statistics, SAT and ACT math."
+    />
+  </head>
+  <body class="container">
+    <header>
+      <hgroup>
+        <h1>High School Math Tutoring in Midtown Atlanta (and online)</h1>
+        <p>[One sentence on what you help students do — raise a grade, survive AP Calc, or walk into the SAT calmer.]</p>
+      </hgroup>
+    </header>
+
+    <main>
+      <section id="about">
+        <h2>About</h2>
+        {s.photo && <img src={s.photo} alt={s.photoAlt} width="240" />}
+        <p>
+          [Two or three sentences: who you are, what you're studying, how long
+          you've been tutoring, and what a session with you feels like.]
+        </p>
+        <p><strong>Background:</strong> [Your school, degree or major, and relevant coursework or tutoring experience.]</p>
+        <p>
+          <strong>Safety:</strong> [Background check details — who ran it and
+          when.] Parents and guardians are always welcome to sit in on sessions,
+          in person or on Zoom.
+        </p>
+      </section>
+
+      <section id="subjects">
+        <h2>Subjects</h2>
+        <ul>{s.subjects.map((subject) => <li>{subject}</li>)}</ul>
+      </section>
+
+      <section id="how">
+        <h2>How it works</h2>
+        {s.steps.map((step, i) => (
+          <article>
+            <h3>{i + 1}. {step.title}</h3>
+            <p>{step.body}</p>
+          </article>
+        ))}
+      </section>
+
+      <section id="rates">
+        <h2>Rates and policies</h2>
+        <p><strong>Starting at $[X]/hr.</strong></p>
+        {s.policies.map((p) => (
+          <details>
+            <summary>{p.title}</summary>
+            <p>{p.body}</p>
+          </details>
+        ))}
+      </section>
+
+      {reviews.length > 0 && (
+        <section id="reviews">
+          <h2>Reviews</h2>
+          <blockquote>
+            <p>{first.body}</p>
+            <footer>
+              <cite>— {first.data.author}{first.data.source && `, ${first.data.source}`}</cite>
+            </footer>
+          </blockquote>
+          {rest.map((r) => (
+            <details>
+              <summary>{r.data.title} — {r.data.author}</summary>
+              <p>{r.body}</p>
+            </details>
+          ))}
+        </section>
+      )}
+
+      <section id="contact">
+        <h2>Contact</h2>
+        <p>
+          Email <a href={`mailto:${s.email}`}>{s.email}</a>, or fill out the
+          <a href={s.interestFormUrl}>interest form</a> and [tell them what
+          happens next — usually a reply within one day].
+        </p>
+        <p>
+          {s.bookingEmbed
+            ? <Fragment set:html={s.bookingEmbed} />
+            : <a href={s.bookingUrl} role="button">Book a free intro call</a>}
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <small>{s.name} · Midtown Atlanta · [Year]</small>
+    </footer>
+  </body>
+</html>

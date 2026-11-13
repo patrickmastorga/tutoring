@@ -1,0 +1,14 @@
+{
+  "name": "tutoring-site",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@picocss/pico": "^2.1.1",
+    "astro": "^7.4.11"
+  }
+}
